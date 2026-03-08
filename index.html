@@ -1,0 +1,2051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Murugan Events – Premium Tamil Event Catering</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Josefin+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --gold-pale: #F5E6C0;
+    --maroon: #6B0F1A;
+    --maroon-deep: #3D0A10;
+    --maroon-mid: #8B1A27;
+    --cream: #FDF6E3;
+    --cream-dark: #F0E6C8;
+    --dark: #1A0A0D;
+    --text-light: #F9F0DC;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Josefin Sans', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    overflow-x: hidden;
+  }
+
+  /* ── Decorative border utility ─────────────────── */
+  .deco-border {
+    position: relative;
+  }
+  .deco-border::before, .deco-border::after {
+    content: '';
+    display: block;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent);
+    margin: 0 auto;
+    max-width: 600px;
+  }
+
+  /* ── Scrollbar ─────────────────────────────────── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--maroon-deep); }
+  ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+  /* ═══════════════════════════════════════════════
+     NAV
+  ═══════════════════════════════════════════════ */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    padding: 18px 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    transition: all 0.4s ease;
+    background: transparent;
+  }
+  nav.scrolled {
+    background: rgba(61,10,16,0.97);
+    backdrop-filter: blur(10px);
+    padding: 12px 40px;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.4);
+  }
+  .nav-logo {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.2rem;
+    color: var(--gold);
+    text-decoration: none;
+    letter-spacing: 2px;
+    line-height: 1.2;
+  }
+  .nav-logo span { display: block; font-size: 0.55rem; letter-spacing: 6px; color: var(--gold-light); text-transform: uppercase; }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 100%;
+    height: 1px; background: var(--gold);
+    transition: right 0.3s ease;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a:hover::after { right: 0; }
+  .nav-cta {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--maroon-deep) !important;
+    padding: 10px 24px !important;
+    border-radius: 2px;
+    font-weight: 700 !important;
+    letter-spacing: 2px !important;
+    transition: transform 0.3s, box-shadow 0.3s !important;
+  }
+  .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(201,168,76,0.4); }
+  .nav-cta::after { display: none !important; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { width: 28px; height: 2px; background: var(--gold); transition: all 0.3s; }
+
+  /* ═══════════════════════════════════════════════
+     HERO
+  ═══════════════════════════════════════════════ */
+  #hero {
+    position: relative; height: 100vh; min-height: 700px;
+    overflow: hidden; display: flex; align-items: center; justify-content: center;
+  }
+  .hero-slides { position: absolute; inset: 0; }
+  .hero-slide {
+    position: absolute; inset: 0;
+    background-size: cover; background-position: center;
+    opacity: 0; transition: opacity 1.5s ease;
+    transform: scale(1.05);
+    animation-duration: 8s; animation-timing-function: ease-in-out; animation-fill-mode: forwards;
+  }
+  .hero-slide.active { opacity: 1; animation-name: kenburns; }
+  @keyframes kenburns {
+    0% { transform: scale(1.05); }
+    100% { transform: scale(1.0); }
+  }
+  .slide-1 { background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&q=80'); }
+  .slide-2 { background-image: url('https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1600&q=80'); }
+  .slide-3 { background-image: url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1600&q=80'); }
+  .slide-4 { background-image: url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1600&q=80'); }
+
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(61,10,16,0.88) 0%, rgba(27,6,10,0.65) 50%, rgba(61,10,16,0.82) 100%);
+  }
+  .hero-pattern {
+    position: absolute; inset: 0; opacity: 0.06;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A84C' fill-opacity='1'%3E%3Cpath d='M30 0l5 10H25L30 0zm0 60l5-10H25l5 10zM0 30l10 5V25L0 30zm60 0l-10 5V25l10 5zM8.79 8.79l7.07 7.07-1.41 1.41-7.07-7.07 1.41-1.41zm35.35 35.35l7.07 7.07-1.41 1.41-7.07-7.07 1.41-1.41zm0-35.35l1.41 1.41-7.07 7.07-1.41-1.41 7.07-7.07zM8.79 51.21l1.41 1.41-7.07 7.07-1.41-1.41 7.07-7.07z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .hero-content {
+    position: relative; z-index: 2; text-align: center;
+    padding: 0 20px; max-width: 900px;
+    animation: heroFadeIn 1.5s ease 0.3s both;
+  }
+  @keyframes heroFadeIn {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-pretitle {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem; letter-spacing: 8px; color: var(--gold-light);
+    text-transform: uppercase; margin-bottom: 20px;
+    display: flex; align-items: center; justify-content: center; gap: 16px;
+  }
+  .hero-pretitle::before, .hero-pretitle::after {
+    content: ''; flex: 1; max-width: 80px; height: 1px; background: var(--gold);
+  }
+
+  .hero-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(2.2rem, 6vw, 4.5rem);
+    color: var(--cream);
+    line-height: 1.1;
+    margin-bottom: 8px;
+    text-shadow: 0 4px 30px rgba(0,0,0,0.5);
+  }
+  .hero-title span { color: var(--gold); display: block; }
+
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    color: var(--gold-pale);
+    font-style: italic;
+    margin: 16px 0 36px;
+    letter-spacing: 2px;
+  }
+
+  .hero-divider {
+    width: 200px; height: 2px; margin: 0 auto 36px;
+    background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent);
+  }
+
+  .hero-ornament {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; color: var(--gold); opacity: 0.7;
+    margin-bottom: 12px; display: block;
+  }
+
+  .hero-btns { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 8px; }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light), var(--gold));
+    background-size: 200% auto;
+    color: var(--maroon-deep);
+    border: none; padding: 16px 44px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 4px;
+    text-transform: uppercase; cursor: pointer; border-radius: 2px;
+    transition: all 0.4s ease; text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 8px 30px rgba(201,168,76,0.35);
+  }
+  .btn-primary:hover {
+    background-position: right center;
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(201,168,76,0.5);
+  }
+  .btn-secondary {
+    background: transparent;
+    color: var(--cream);
+    border: 1px solid rgba(201,168,76,0.6);
+    padding: 16px 44px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 4px;
+    text-transform: uppercase; cursor: pointer; border-radius: 2px;
+    transition: all 0.4s ease; text-decoration: none;
+    display: inline-block;
+  }
+  .btn-secondary:hover {
+    background: rgba(201,168,76,0.12);
+    border-color: var(--gold);
+    transform: translateY(-3px);
+  }
+
+  .hero-indicators {
+    position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+    display: flex; gap: 10px; z-index: 3;
+  }
+  .indicator {
+    width: 30px; height: 2px; background: rgba(255,255,255,0.3);
+    cursor: pointer; transition: all 0.3s;
+  }
+  .indicator.active { background: var(--gold); width: 60px; }
+
+  .scroll-hint {
+    position: absolute; bottom: 40px; right: 40px; z-index: 3;
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    color: rgba(255,255,255,0.5); font-size: 0.55rem; letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .scroll-line {
+    width: 1px; height: 50px;
+    background: linear-gradient(to bottom, transparent, var(--gold));
+    animation: scrollLine 2s ease infinite;
+  }
+  @keyframes scrollLine {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    51% { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
+
+  /* ═══════════════════════════════════════════════
+     MARQUEE STRIP
+  ═══════════════════════════════════════════════ */
+  .marquee-strip {
+    background: linear-gradient(90deg, var(--maroon-deep), var(--maroon), var(--maroon-deep));
+    padding: 14px 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(201,168,76,0.3);
+    border-bottom: 1px solid rgba(201,168,76,0.3);
+  }
+  .marquee-track {
+    display: flex; gap: 0;
+    animation: marqueeScroll 30s linear infinite;
+    white-space: nowrap;
+  }
+  .marquee-item {
+    display: inline-flex; align-items: center; gap: 16px;
+    padding: 0 32px;
+    font-size: 0.62rem; letter-spacing: 4px; color: var(--gold-light);
+    text-transform: uppercase; font-weight: 600;
+  }
+  .marquee-item i { color: var(--gold); font-size: 0.9rem; }
+  @keyframes marqueeScroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ═══════════════════════════════════════════════
+     SECTIONS — SHARED
+  ═══════════════════════════════════════════════ */
+  section { padding: 100px 40px; }
+  .section-header { text-align: center; margin-bottom: 70px; }
+  .section-tag {
+    font-size: 0.6rem; letter-spacing: 6px; color: var(--gold);
+    text-transform: uppercase; font-weight: 700; margin-bottom: 12px; display: block;
+  }
+  .section-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1.6rem, 4vw, 2.8rem);
+    color: var(--maroon-deep);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .section-title.light { color: var(--cream); }
+  .section-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem; color: #6B4A30;
+    max-width: 600px; margin: 0 auto;
+    font-style: italic; line-height: 1.7;
+  }
+  .section-desc.light { color: var(--gold-pale); }
+  .gold-line {
+    width: 120px; height: 2px; margin: 20px auto 0;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  /* REVEAL ANIMATION */
+  .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-left { opacity: 0; transform: translateX(-40px); transition: all 0.8s ease; }
+  .reveal-left.visible { opacity: 1; transform: translateX(0); }
+  .reveal-right { opacity: 0; transform: translateX(40px); transition: all 0.8s ease; }
+  .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+  /* ═══════════════════════════════════════════════
+     ABOUT
+  ═══════════════════════════════════════════════ */
+  #about {
+    background: var(--cream);
+    position: relative;
+    padding: 100px 40px;
+    overflow: hidden;
+  }
+  #about::before {
+    content: 'SINCE 2005';
+    position: absolute; right: -40px; top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 5rem; color: rgba(107,15,26,0.04);
+    letter-spacing: 20px; white-space: nowrap; pointer-events: none;
+  }
+  .about-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: center;
+  }
+  .about-image-wrap {
+    position: relative;
+  }
+  .about-img-main {
+    width: 100%; aspect-ratio: 4/5;
+    object-fit: cover; border-radius: 2px;
+    position: relative; z-index: 1;
+    display: block;
+  }
+  .about-img-accent {
+    position: absolute;
+    width: 55%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    bottom: -30px; right: -30px; z-index: 2;
+    border: 6px solid var(--cream);
+    border-radius: 2px;
+  }
+  .about-img-placeholder {
+    width: 100%; aspect-ratio: 4/5;
+    
+    border-radius: 2px;
+    
+    position: relative; overflow: hidden;
+  }
+  .about-img-placeholder::before {
+    content: '';
+    position: absolute; inset: 20px;
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 2px;
+    z-index: 2;
+  }
+  .about-img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;;
+  }
+  .about-frame {
+    position: absolute;
+    inset: 15px;
+    border: 1px solid rgba(201,168,76,0.25);
+    pointer-events: none; z-index: 3;
+  }
+  .about-gold-bar {
+    position: absolute; top: -15px; left: 30px; right: 30px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    z-index: 4;
+  }
+
+  .about-content { padding-left: 20px; }
+  .about-content .section-tag { text-align: left; }
+  .about-content .section-title { text-align: left; }
+  .about-body {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; line-height: 1.9;
+    color: #5A3A2A; margin-bottom: 30px;
+  }
+  .about-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 20px; margin-bottom: 36px;
+  }
+  .stat-box {
+    text-align: center; padding: 20px 10px;
+    border: 1px solid rgba(201,168,76,0.3);
+    background: linear-gradient(135deg, rgba(201,168,76,0.05), rgba(107,15,26,0.03));
+    position: relative; overflow: hidden;
+  }
+  .stat-box::after {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .stat-num {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2rem; color: var(--maroon);
+    line-height: 1; display: block; margin-bottom: 4px;
+  }
+  .stat-label { font-size: 0.6rem; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; }
+
+  /* ═══════════════════════════════════════════════
+     SERVICES
+  ═══════════════════════════════════════════════ */
+  #services {
+    background: var(--maroon-deep);
+    position: relative;
+    overflow: hidden;
+  }
+  #services::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A84C' fill-opacity='0.04'%3E%3Cpath d='M40 0L43 7H37L40 0zm0 80l3-7H37l3 7zM0 40l7 3V37L0 40zm80 0l-7 3V37l7 3z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .services-grid {
+    max-width: 1300px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+  }
+  .service-card {
+    position: relative; overflow: hidden; border-radius: 2px;
+    cursor: pointer; height: 360px;
+    background: var(--maroon);
+  }
+  .service-card-bg {
+    position: absolute; inset: 0;
+    background-size: cover; background-position: center;
+    transition: transform 0.7s cubic-bezier(0.4,0,0.2,1);
+    filter: brightness(0.5) saturate(0.8);
+  }
+  .service-card:hover .service-card-bg {
+    transform: scale(1.08);
+    filter: brightness(0.35) saturate(0.6);
+  }
+  .service-card-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(61,10,16,0.97) 0%, rgba(61,10,16,0.4) 50%, transparent 100%);
+    transition: all 0.4s;
+  }
+  .service-card:hover .service-card-overlay {
+    background: linear-gradient(to top, rgba(61,10,16,0.99) 0%, rgba(61,10,16,0.7) 70%, rgba(61,10,16,0.3) 100%);
+  }
+  .service-card-content {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 30px;
+  }
+  .service-icon {
+    width: 52px; height: 52px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border-radius: 2px; display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; color: var(--maroon-deep);
+    margin-bottom: 14px;
+    transform: translateY(20px); opacity: 0;
+    transition: all 0.5s ease 0.1s;
+  }
+  .service-card:hover .service-icon { transform: translateY(0); opacity: 1; }
+  .service-tag {
+    font-size: 0.55rem; letter-spacing: 4px; color: var(--gold);
+    text-transform: uppercase; margin-bottom: 8px;
+  }
+  .service-name {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.15rem; color: var(--cream);
+    line-height: 1.3; margin-bottom: 12px;
+  }
+  .service-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem; color: var(--gold-pale);
+    line-height: 1.6; max-height: 0; overflow: hidden;
+    transition: max-height 0.5s ease;
+    font-style: italic;
+  }
+  .service-card:hover .service-desc { max-height: 120px; }
+  .service-badge {
+    position: absolute; top: 20px; right: 20px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--maroon-deep);
+    font-size: 0.55rem; letter-spacing: 2px; padding: 6px 14px;
+    text-transform: uppercase; font-weight: 700;
+  }
+
+  /* FEATURED HIGHLIGHT CARDS */
+  .services-highlight {
+    max-width: 1300px; margin: 50px auto 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 28px;
+  }
+  .highlight-card {
+    background: linear-gradient(135deg, rgba(201,168,76,0.12), rgba(107,15,26,0.5));
+    border: 1px solid rgba(201,168,76,0.25);
+    padding: 40px;
+    display: flex; gap: 30px; align-items: center;
+    position: relative; overflow: hidden;
+    transition: all 0.4s;
+  }
+  .highlight-card::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(201,168,76,0.05), transparent);
+    opacity: 0; transition: opacity 0.4s;
+  }
+  .highlight-card:hover::before { opacity: 1; }
+  .highlight-card:hover { border-color: rgba(201,168,76,0.5); transform: translateY(-4px); }
+  .highlight-icon { font-size: 3rem; color: var(--gold); flex-shrink: 0; }
+  .highlight-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.1rem; color: var(--gold-light); margin-bottom: 10px;
+  }
+  .highlight-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem; color: rgba(245,230,192,0.8);
+    line-height: 1.6; font-style: italic;
+  }
+
+  /* ═══════════════════════════════════════════════
+     GALLERY
+  ═══════════════════════════════════════════════ */
+  #gallery { background: var(--cream-dark); padding: 100px 40px; }
+  .gallery-grid {
+    max-width: 1300px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 16px;
+  }
+  .gallery-item {
+    position: relative; overflow: hidden; border-radius: 2px;
+    cursor: pointer; background: var(--maroon);
+  }
+  .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+  .gallery-item:nth-child(6) { grid-column: span 2; }
+  .gallery-img {
+    width: 100%; height: 100%; min-height: 200px;
+    object-fit: cover; display: block;
+    transition: transform 0.6s cubic-bezier(0.4,0,0.2,1), filter 0.6s;
+  }
+  .gallery-placeholder {
+    width: 100%; min-height: 200px; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 10px;
+    background: linear-gradient(135deg, var(--maroon-deep), var(--maroon));
+    color: rgba(201,168,76,0.4); font-size: 2.5rem;
+    transition: all 0.6s;
+  }
+  .gallery-placeholder span { font-size: 0.65rem; letter-spacing: 3px; color: rgba(201,168,76,0.3); }
+  .gallery-item:hover .gallery-placeholder { filter: brightness(0.7); }
+  .gallery-item:hover .gallery-img { transform: scale(1.08); filter: brightness(0.7) saturate(0.8); }
+  .gallery-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(61,10,16,0.95), transparent 50%);
+    opacity: 0; transition: opacity 0.4s;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .gallery-item:hover .gallery-overlay { opacity: 1; }
+  .gallery-zoom {
+    width: 56px; height: 56px;
+    background: rgba(201,168,76,0.9);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    color: var(--maroon-deep); font-size: 1.2rem;
+    transform: scale(0.5); transition: transform 0.3s;
+  }
+  .gallery-item:hover .gallery-zoom { transform: scale(1); }
+
+  /* LIGHTBOX */
+  .lightbox {
+    position: fixed; inset: 0; z-index: 9999;
+    background: rgba(15,5,8,0.97);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none; transition: opacity 0.4s;
+  }
+  .lightbox.open { opacity: 1; pointer-events: all; }
+  .lightbox img {
+    max-width: 90vw; max-height: 85vh;
+    object-fit: contain; border: 2px solid rgba(201,168,76,0.3);
+  }
+  .lightbox-close {
+    position: absolute; top: 30px; right: 40px;
+    color: var(--gold); font-size: 2rem; cursor: pointer;
+    background: none; border: none;
+    transition: transform 0.3s; font-size: 1.5rem;
+  }
+  .lightbox-close:hover { transform: rotate(90deg); }
+
+  /* ═══════════════════════════════════════════════
+     WHY CHOOSE US
+  ═══════════════════════════════════════════════ */
+  #why {
+    background: linear-gradient(135deg, var(--maroon) 0%, var(--maroon-deep) 100%);
+    position: relative; overflow: hidden;
+  }
+  .why-grid {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  .why-card {
+    text-align: center; padding: 40px 24px;
+    position: relative; border: 1px solid rgba(201,168,76,0.15);
+    transition: all 0.4s;
+    background: rgba(201,168,76,0.03);
+  }
+  .why-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    transform: scaleX(0); transition: transform 0.4s;
+  }
+  .why-card:hover::before { transform: scaleX(1); }
+  .why-card:hover { background: rgba(201,168,76,0.07); transform: translateY(-8px); border-color: rgba(201,168,76,0.3); }
+  .why-icon-ring {
+    width: 72px; height: 72px;
+    border: 1px solid rgba(201,168,76,0.4);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 1.6rem; color: var(--gold);
+    position: relative; transition: all 0.4s;
+  }
+  .why-icon-ring::after {
+    content: '';
+    position: absolute; inset: -6px;
+    border-radius: 50%;
+    border: 1px dashed rgba(201,168,76,0.2);
+    animation: spin 20s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .why-card:hover .why-icon-ring { background: rgba(201,168,76,0.1); border-color: var(--gold); }
+  .why-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 0.9rem; color: var(--gold-light);
+    margin-bottom: 14px; line-height: 1.4;
+  }
+  .why-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem; color: rgba(245,230,192,0.75);
+    line-height: 1.7; font-style: italic;
+  }
+
+  /* ═══════════════════════════════════════════════
+     PRICING
+  ═══════════════════════════════════════════════ */
+  #pricing { background: var(--cream); }
+  .pricing-intro {
+    max-width: 600px; margin: 0 auto 60px;
+    text-align: center;
+  }
+  .guest-selector {
+    max-width: 700px; margin: 0 auto 60px;
+    background: linear-gradient(135deg, var(--maroon-deep), var(--maroon));
+    padding: 40px; border: 1px solid rgba(201,168,76,0.25);
+    position: relative;
+  }
+  .guest-selector::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .guest-label {
+    font-size: 0.6rem; letter-spacing: 4px; color: var(--gold-light);
+    text-transform: uppercase; text-align: center; display: block; margin-bottom: 16px;
+  }
+  .guest-count-display {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 3rem; color: var(--gold);
+    text-align: center; margin-bottom: 20px;
+  }
+  .guest-count-display span { font-size: 1rem; color: var(--gold-pale); }
+  input[type="range"] {
+    width: 100%; -webkit-appearance: none; height: 2px;
+    background: rgba(201,168,76,0.3); outline: none; cursor: pointer;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; width: 20px; height: 20px;
+    background: var(--gold); border-radius: 50%; cursor: pointer;
+    box-shadow: 0 0 10px rgba(201,168,76,0.5);
+  }
+  .range-labels {
+    display: flex; justify-content: space-between;
+    margin-top: 10px;
+    font-size: 0.6rem; color: rgba(245,230,192,0.5); letter-spacing: 1px;
+  }
+
+  .pricing-cards {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 28px; align-items: start;
+  }
+  .price-card {
+    border: 1px solid rgba(201,168,76,0.2);
+    padding: 40px 30px;
+    text-align: center; position: relative;
+    transition: all 0.4s; background: #fff;
+  }
+  .price-card.featured {
+    background: linear-gradient(135deg, var(--maroon-deep), var(--maroon));
+    border-color: var(--gold);
+    transform: translateY(-20px);
+  }
+  .price-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .price-card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(107,15,26,0.12); }
+  .price-card.featured:hover { transform: translateY(-28px); }
+  .price-badge {
+    position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--maroon-deep);
+    font-size: 0.55rem; letter-spacing: 3px; padding: 6px 20px;
+    font-weight: 700; text-transform: uppercase; white-space: nowrap;
+  }
+  .price-tier {
+    font-size: 0.55rem; letter-spacing: 4px; color: var(--gold);
+    text-transform: uppercase; margin-bottom: 12px;
+  }
+  .price-featured .price-tier { color: var(--gold-light); }
+  .price-name {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.1rem; color: var(--maroon-deep); margin-bottom: 24px;
+  }
+  .price-card.featured .price-name { color: var(--cream); }
+  .price-amount {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem; color: var(--maroon); font-weight: 300;
+    margin-bottom: 6px; line-height: 1;
+  }
+  .price-card.featured .price-amount { color: var(--gold); }
+  .price-per {
+    font-size: 0.6rem; letter-spacing: 2px; color: #888;
+    text-transform: uppercase; margin-bottom: 28px;
+  }
+  .price-card.featured .price-per { color: rgba(245,230,192,0.6); }
+  .price-features { list-style: none; margin-bottom: 32px; }
+  .price-features li {
+    padding: 10px 0; border-bottom: 1px solid rgba(107,15,26,0.08);
+    font-family: 'Cormorant Garamond', serif; font-size: 1rem;
+    color: #5A3A2A; display: flex; align-items: center; gap: 10px;
+    justify-content: flex-start;
+  }
+  .price-card.featured .price-features li { color: rgba(245,230,192,0.85); border-color: rgba(201,168,76,0.1); }
+  .price-features li i { color: var(--gold); width: 14px; }
+  .btn-price {
+    width: 100%; padding: 14px;
+    background: linear-gradient(135deg, var(--maroon), var(--maroon-mid));
+    color: var(--cream); border: none; cursor: pointer;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 600;
+    transition: all 0.3s;
+  }
+  .price-card.featured .btn-price {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--maroon-deep);
+  }
+  .btn-price:hover { opacity: 0.85; transform: translateY(-2px); }
+
+  /* ═══════════════════════════════════════════════
+     TESTIMONIALS
+  ═══════════════════════════════════════════════ */
+  #testimonials {
+    background: var(--maroon-deep);
+    position: relative; overflow: hidden;
+  }
+  #testimonials::before {
+    content: '"';
+    position: absolute; left: 40px; top: 40px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20rem; color: rgba(201,168,76,0.04);
+    line-height: 1; pointer-events: none;
+  }
+
+  .testimonials-slider {
+    max-width: 900px; margin: 0 auto;
+    position: relative; overflow: hidden;
+  }
+  .testimonial-track {
+    display: flex; transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+  }
+  .testimonial-slide {
+    min-width: 100%; padding: 0 20px;
+    text-align: center;
+  }
+  .testi-stars {
+    color: var(--gold); font-size: 1rem; margin-bottom: 24px;
+    letter-spacing: 4px;
+  }
+  .testi-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    color: var(--cream); line-height: 1.7;
+    font-style: italic; margin-bottom: 36px;
+  }
+  .testi-author {
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+  }
+  .testi-avatar {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), var(--maroon));
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.2rem; color: var(--cream); margin-bottom: 10px;
+    border: 2px solid rgba(201,168,76,0.4);
+  }
+  .testi-name {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 0.85rem; color: var(--gold);
+  }
+  .testi-event { font-size: 0.6rem; letter-spacing: 3px; color: rgba(245,230,192,0.5); text-transform: uppercase; }
+
+  .testi-nav {
+    display: flex; justify-content: center; gap: 12px; margin-top: 48px;
+  }
+  .testi-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: rgba(201,168,76,0.3); cursor: pointer; transition: all 0.3s;
+  }
+  .testi-dot.active { background: var(--gold); width: 28px; border-radius: 4px; }
+
+  /* ═══════════════════════════════════════════════
+     CONTACT / BOOKING
+  ═══════════════════════════════════════════════ */
+  #contact {
+    background: var(--cream);
+    position: relative;
+  }
+  .contact-inner {
+    max-width: 1200px; margin: 0 auto;
+  }
+  .contact-form-wrap {}
+  .contact-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    color: var(--maroon-deep); margin-bottom: 10px;
+  }
+  .contact-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; color: #6B4A30; font-style: italic;
+    margin-bottom: 36px;
+  }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .form-group { margin-bottom: 20px; }
+  .form-group label {
+    display: block; font-size: 0.6rem; letter-spacing: 3px; color: var(--maroon);
+    text-transform: uppercase; margin-bottom: 8px; font-weight: 600;
+  }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 14px 18px;
+    background: #fff; border: 1px solid rgba(107,15,26,0.15);
+    font-family: 'Josefin Sans', sans-serif; font-size: 0.85rem;
+    color: var(--dark); outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    border-radius: 2px;
+    appearance: none;
+  }
+  .form-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B0F1A' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 16px center;
+    padding-right: 40px;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.12);
+  }
+  .form-group textarea { min-height: 120px; resize: vertical; }
+  .submit-btn {
+    width: 100%; padding: 18px;
+    background: linear-gradient(135deg, var(--maroon-deep), var(--maroon));
+    color: var(--gold-light); border: none; cursor: pointer;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.7rem; letter-spacing: 5px; font-weight: 700;
+    text-transform: uppercase; transition: all 0.4s;
+    position: relative; overflow: hidden;
+  }
+  .submit-btn::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    opacity: 0; transition: opacity 0.4s;
+  }
+  .submit-btn:hover::after { opacity: 0.15; }
+  .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(107,15,26,0.3); }
+
+  .contact-info { padding: 20px 0; }
+  .contact-info .section-tag,
+  .contact-info .section-title { text-align: left; color: var(--cream); }
+  .contact-info .section-tag { color: var(--gold); }
+  .contact-item {
+    display: flex; gap: 18px; align-items: flex-start; margin-bottom: 28px;
+  }
+  .contact-icon {
+    width: 44px; height: 44px; background: rgba(201,168,76,0.15);
+    border: 1px solid rgba(201,168,76,0.3);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold); font-size: 1rem; flex-shrink: 0;
+  }
+  .contact-detail-label {
+    font-size: 0.55rem; letter-spacing: 3px; color: rgba(245,230,192,0.5);
+    text-transform: uppercase; margin-bottom: 4px;
+  }
+  .contact-detail-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem; color: var(--cream);
+  }
+
+  /* ═══════════════════════════════════════════════
+     FOOTER
+  ═══════════════════════════════════════════════ */
+  footer {
+    background: var(--dark);
+    padding: 60px 40px 30px;
+    border-top: 1px solid rgba(201,168,76,0.2);
+  }
+  .footer-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 60px; margin-bottom: 50px;
+  }
+  .footer-logo {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.3rem; color: var(--gold);
+    text-decoration: none; display: block; margin-bottom: 16px;
+  }
+  .footer-logo-sub {
+    font-size: 0.55rem; letter-spacing: 6px; color: rgba(201,168,76,0.6);
+    text-transform: uppercase; display: block; margin-bottom: 20px;
+  }
+  .footer-about {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem; color: rgba(255,255,255,0.45);
+    line-height: 1.7; font-style: italic;
+  }
+  .footer-heading {
+    font-size: 0.6rem; letter-spacing: 4px; color: var(--gold);
+    text-transform: uppercase; font-weight: 700; margin-bottom: 20px;
+  }
+  .footer-links { list-style: none; }
+  .footer-links li { margin-bottom: 10px; }
+  .footer-links a {
+    color: rgba(255,255,255,0.45); text-decoration: none;
+    font-size: 0.85rem; transition: color 0.3s;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-links a::before { content: '›'; color: var(--gold); }
+  .footer-social { display: flex; gap: 12px; margin-top: 20px; }
+  .social-icon {
+    width: 40px; height: 40px;
+    border: 1px solid rgba(201,168,76,0.25);
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.45);
+    transition: all 0.3s; cursor: pointer; text-decoration: none;
+    font-size: 0.9rem;
+  }
+  .social-icon:hover { background: rgba(201,168,76,0.1); color: var(--gold); border-color: var(--gold); }
+  .footer-bottom {
+    max-width: 1200px; margin: 0 auto;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px;
+  }
+  .footer-copy {
+    font-size: 0.7rem; color: rgba(255,255,255,0.25);
+    letter-spacing: 1px;
+  }
+  .footer-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem; color: rgba(201,168,76,0.5);
+    font-style: italic;
+  }
+
+  /* ═══════════════════════════════════════════════
+     WHATSAPP FLOAT
+  ═══════════════════════════════════════════════ */
+  .wa-float {
+    position: fixed; bottom: 30px; right: 30px; z-index: 9000;
+  }
+  .wa-btn {
+    width: 60px; height: 60px;
+    background: linear-gradient(135deg, #25D366, #1ebe5d);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 1.6rem; text-decoration: none;
+    box-shadow: 0 8px 30px rgba(37,211,102,0.4);
+    animation: waPulse 2.5s ease infinite;
+    transition: transform 0.3s;
+  }
+  .wa-btn:hover { transform: scale(1.1); }
+  @keyframes waPulse {
+    0%, 100% { box-shadow: 0 8px 30px rgba(37,211,102,0.4); }
+    50% { box-shadow: 0 8px 50px rgba(37,211,102,0.65); }
+  }
+  .wa-tooltip {
+    position: absolute; right: 70px; top: 50%; transform: translateY(-50%);
+    background: var(--maroon-deep); color: var(--gold-light);
+    padding: 8px 16px; white-space: nowrap; border-radius: 2px;
+    font-size: 0.65rem; letter-spacing: 2px;
+    opacity: 0; transition: opacity 0.3s; pointer-events: none;
+    border: 1px solid rgba(201,168,76,0.2);
+  }
+  .wa-float:hover .wa-tooltip { opacity: 1; }
+
+  /* ═══════════════════════════════════════════════
+     MOBILE NAV MENU
+  ═══════════════════════════════════════════════ */
+  .mobile-menu {
+    position: fixed; top: 0; right: -100%; bottom: 0;
+    width: 80%; max-width: 320px; z-index: 9999;
+    background: var(--maroon-deep);
+    padding: 80px 40px 40px;
+    transition: right 0.4s cubic-bezier(0.4,0,0.2,1);
+    border-left: 1px solid rgba(201,168,76,0.2);
+  }
+  .mobile-menu.open { right: 0; }
+  .mobile-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.7);
+    z-index: 9998; opacity: 0; pointer-events: none; transition: opacity 0.3s;
+  }
+  .mobile-overlay.open { opacity: 1; pointer-events: all; }
+  .mobile-menu-links { list-style: none; }
+  .mobile-menu-links li { margin-bottom: 8px; }
+  .mobile-menu-links a {
+    display: block; padding: 14px 0;
+    color: var(--cream); text-decoration: none;
+    font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+    transition: color 0.3s;
+  }
+  .mobile-menu-links a:hover { color: var(--gold); }
+  .mobile-close {
+    position: absolute; top: 24px; right: 24px;
+    background: none; border: none; color: var(--gold);
+    font-size: 1.5rem; cursor: pointer;
+  }
+
+  /* ═══════════════════════════════════════════════
+     RESPONSIVE
+  ═══════════════════════════════════════════════ */
+  @media (max-width: 1100px) {
+    .pricing-cards { grid-template-columns: 1fr; max-width: 450px; }
+    .price-card.featured { transform: none; }
+    .price-card.featured:hover { transform: translateY(-8px); }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 900px) {
+    section { padding: 70px 24px; }
+    .about-inner { grid-template-columns: 1fr; gap: 50px; }
+    .about-content { padding-left: 0; }
+    .services-highlight { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .gallery-item:nth-child(1) { grid-column: span 2; }
+    .gallery-item:nth-child(6) { grid-column: span 1; }
+    .contact-inner { grid-template-columns: 1fr; }
+    #contact::after { display: none; }
+    .contact-cards-grid { grid-template-columns: 1fr !important; }
+    .contact-cards-grid [style*="span 1"] { grid-column: span 1 !important; }
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+  }
+
+  @media (max-width: 600px) {
+    .why-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr; gap: 36px; }
+    .hero-btns { flex-direction: column; align-items: center; }
+    nav.scrolled { padding: 12px 24px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .about-stats { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────── -->
+<nav id="mainNav">
+  <a href="#hero" class="nav-logo">
+    Murugan
+    <span>Events & Catering</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact" class="nav-cta">Book Now</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-overlay" id="mobileOverlay" onclick="closeMenu()"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose" onclick="closeMenu()">✕</button>
+  <ul class="mobile-menu-links">
+    <li><a href="#about" class="mobile-link" onclick="closeMenu()">About Us</a></li>
+    <li><a href="#services" class="mobile-link" onclick="closeMenu()">Services</a></li>
+    <li><a href="#gallery" class="mobile-link" onclick="closeMenu()">Gallery</a></li>
+    <li><a href="#pricing" class="mobile-link" onclick="closeMenu()">Pricing</a></li>
+    <li><a href="#testimonials" class="mobile-link" onclick="closeMenu()">Testimonials</a></li>
+    <li><a href="#contact" class="mobile-link" onclick="closeMenu()">Contact Us</a></li>
+  </ul>
+</div>
+
+<!-- ── HERO ──────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-slides">
+    <div class="hero-slide slide-1 active"></div>
+    <div class="hero-slide slide-2"></div>
+    <div class="hero-slide slide-3"></div>
+    <div class="hero-slide slide-4"></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-pattern"></div>
+
+  <div class="hero-content">
+    <p class="hero-pretitle">Premier Event Specialists</p>
+    <h1 class="hero-title">
+      Where Tradition
+      <span>Meets Elegance</span>
+    </h1>
+    <div class="hero-divider"></div>
+    <p class="hero-subtitle">Premium Beeda · Ice Cream · Popcorn · Cotton Candy · Fresh Juices & More</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Book Your Event</a>
+      <a href="#services" class="btn-secondary">Explore Services</a>
+    </div>
+  </div>
+
+  <div class="hero-indicators" id="heroIndicators">
+    <div class="indicator active" data-index="0"></div>
+    <div class="indicator" data-index="1"></div>
+    <div class="indicator" data-index="2"></div>
+    <div class="indicator" data-index="3"></div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ── MARQUEE STRIP ──────────────────────────────── -->
+<div class="marquee-strip">
+  <div class="marquee-track" id="marqueeTrack">
+    <div class="marquee-item"><i class="fas fa-leaf"></i> Premium Beeda Counter</div>
+    <div class="marquee-item"><i class="fas fa-ice-cream"></i> Artisan Ice Cream</div>
+    <div class="marquee-item"><i class="fas fa-apple-alt"></i> Fresh Fruit Stalls</div>
+    <div class="marquee-item">🍿 Popcorn Counter</div>
+    <div class="marquee-item">🍭 Cotton Candy</div>
+    <div class="marquee-item">🥤 Fresh Juice Variety</div>
+    <div class="marquee-item"><i class="fas fa-horse"></i> Horse Ride Arrangements</div>
+    <div class="marquee-item"><i class="fas fa-drum"></i> Drum & Chendamelam</div>
+    <div class="marquee-item"><i class="fas fa-ring"></i> Wedding Arrangements</div>
+    <div class="marquee-item"><i class="fas fa-star-and-crescent"></i> Temple Functions</div>
+    <div class="marquee-item"><i class="fas fa-building"></i> Corporate Events</div>
+    <!-- Duplicate for seamless loop -->
+    <div class="marquee-item"><i class="fas fa-leaf"></i> Premium Beeda Counter</div>
+    <div class="marquee-item"><i class="fas fa-ice-cream"></i> Artisan Ice Cream</div>
+    <div class="marquee-item"><i class="fas fa-apple-alt"></i> Fresh Fruit Stalls</div>
+    <div class="marquee-item">🍿 Popcorn Counter</div>
+    <div class="marquee-item">🍭 Cotton Candy</div>
+    <div class="marquee-item">🥤 Fresh Juice Variety</div>
+    <div class="marquee-item"><i class="fas fa-horse"></i> Horse Ride Arrangements</div>
+    <div class="marquee-item"><i class="fas fa-drum"></i> Drum & Chendamelam</div>
+    <div class="marquee-item"><i class="fas fa-ring"></i> Wedding Arrangements</div>
+    <div class="marquee-item"><i class="fas fa-star-and-crescent"></i> Temple Functions</div>
+    <div class="marquee-item"><i class="fas fa-building"></i> Corporate Events</div>
+  </div>
+</div>
+
+<!-- ── ABOUT ──────────────────────────────────────── -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-image-wrap reveal-left">
+      <div class="about-img-placeholder">
+        <img src="C:\Users\linge\Downloads\Buissness\Gemini_Generated_Image_a9uny1a9uny1a9un.png">
+      </div>
+      <div class="about-frame"></div>
+      <div class="about-gold-bar"></div>
+    </div>
+    <div class="about-content reveal-right">
+      <span class="section-tag">Our Story</span>
+      <h2 class="section-title">Crafting Memories<br>Since 2000</h2>
+      <div class="gold-line" style="margin:16px 0 24px;"></div>
+      <p class="about-body">
+        Rooted in the rich cultural heritage of Tamil Nadu, Murugan Events has been the trusted name for premium event experiences across the state. We blend the timeless elegance of traditional Tamil celebrations with modern sophistication to create events that are truly unforgettable.
+      </p>
+      <p class="about-body">
+        From the finest hand-rolled beeda counter to artisan ice cream creations, from magnificent horse processions to soul-stirring Chendamelam performances — every element we provide is curated with passion and executed with perfection.
+      </p>
+      <div class="about-stats">
+        <div class="stat-box">
+          <span class="stat-num">500+</span>
+          <span class="stat-label">Events Done</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">25+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">12</span>
+          <span class="stat-label">Districts Served</span>
+        </div>
+      </div>
+      <a href="#contact" class="btn-primary">Plan Your Event</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICES ───────────────────────────────────── -->
+<section id="services">
+  <div class="section-header reveal">
+    <span class="section-tag">What We Offer</span>
+    <h2 class="section-title light">Our Premium Services</h2>
+    <p class="section-desc light">Every detail crafted with devotion, every moment made memorable</p>
+    <div class="gold-line"></div>
+  </div>
+
+  <div class="services-grid">
+
+    <!-- 1. Beeda Counter -->
+    <div class="service-card reveal" style="transition-delay:0.0s">
+      
+      <div class="service-card-bg" style="background-image:url('Gemini_Generated_Image_ny1usony1usony1u.png')"></div>
+      <div class="service-card-overlay"></div>
+      <div class="service-card-content">
+        <div class="service-icon">🌿</div>
+        <div class="service-tag">Signature Speciality</div>
+        <h3 class="service-name">Premium Beeda Counter</h3>
+        <p class="service-desc">Fresh paan leaves with sweet fillings,dry fruits,gulkand and colorful toppings prepared live for events</p>
+      </div>
+      <div class="service-badge">Star Service</div>
+    </div>
+
+    <!-- 2. Ice Cream -->
+    <div class="service-card reveal" style="transition-delay:0.08s">
+      <div class="service-card-bg" style="background-image:url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80')"></div>
+      <div class="service-card-overlay"></div>
+      <div class="service-card-content">
+        <div class="service-icon">🍦</div>
+        <div class="service-tag">Live Counter</div>
+        <h3 class="service-name">Ice Cream Counter</h3>
+        <p class="service-desc">20+ flavors including kulfi, fruit sorbets & scooped creams — a live, photogenic dessert experience guests of all ages will love.</p>
+      </div>
+      <div class="service-badge">Fan Favourite</div>
+    </div>
+
+    <!-- 3. Popcorn -->
+    <div class="service-card reveal" style="transition-delay:0.16s">
+      <div class="service-card-bg" style="background-image:url('https://images.unsplash.com/photo-1585647347483-22b66260dfff?w=800&q=80')"></div>
+      <div class="service-card-overlay"></div>
+      <div class="service-card-content">
+        <div class="service-icon">🍿</div>
+        <div class="service-tag">Snack Counter</div>
+        <h3 class="service-name">Popcorn Counter</h3>
+        <p class="service-desc">Live popcorn machine with butter, caramel, masala & cheese flavors — an irresistible crowd-pleaser at any event, big or small.</p>
+      </div>
+      <div class="service-badge">New!</div>
+    </div>
+
+    <!-- 4. Cotton Candy -->
+    <div class="service-card reveal" style="transition-delay:0.0s">
+      <div class="service-card-bg" style="background-image:url('candy.jpg')"></div>
+      <div class="service-card-overlay"></div>
+      <div class="service-card-content">
+        <div class="service-icon">🍭</div>
+        <div class="service-tag">Sweet Treat</div>
+        <h3 class="service-name">Cotton Candy Stall</h3>
+        <p class="service-desc">Live spinning cotton candy in rainbow, rose & blue — a dreamy, photogenic delight loved by kids and adults at every celebration.</p>
+      </div>
+      <div class="service-badge">New!</div>
+    </div>
+
+    <!-- 5. Fresh Juice -->
+    <div class="service-card reveal" style="transition-delay:0.08s">
+      <div class="service-card-bg" style="background-image:url('https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=800&q=80')"></div>
+      <div class="service-card-overlay"></div>
+      <div class="service-card-content">
+        <div class="service-icon">🥤</div>
+        <div class="service-tag">Beverages</div>
+        <h3 class="service-name">Fresh Juice Variety Counter</h3>
+        <p class="service-desc">Live juice bar — sugarcane, watermelon, mango, orange & seasonal blends, served fresh, hygienic and beautifully presented.</p>
+      </div>
+      <div class="service-badge">New!</div>
+    </div>
+
+    <!-- 6. Fruit Stall -->
+    <div class="service-card reveal" style="transition-delay:0.16s">
+      <div class="service-card-bg" style="background-image:url('https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80')"></div>
+      <div class="service-card-overlay"></div>
+      <div class="service-card-content">
+        <div class="service-icon"><i class="fas fa-apple-alt"></i></div>
+        <div class="service-tag">Refreshment</div>
+        <h3 class="service-name">Fresh Fruit Stall</h3>
+        <p class="service-desc">Beautifully decorated counters with seasonal fruits, hygienic cut arrangements and live serving — colorful, healthy and festive.</p>
+      </div>
+    </div>
+
+    <!-- 7. Wedding -->
+    <div class="service-card reveal" style="transition-delay:0.0s">
+      <div class="service-card-bg" style="background-image:url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&q=80')"></div>
+      <div class="service-card-overlay"></div>
+      <div class="service-card-content">
+        <div class="service-icon"><i class="fas fa-ring"></i></div>
+        <div class="service-tag">Signature</div>
+        <h3 class="service-name">Wedding & Reception Setup</h3>
+        <p class="service-desc">Full event arrangements — décor, welcome arches, floral designs & stage setup crafted beautifully for Tamil weddings and receptions.</p>
+      </div>
+      <div class="service-badge">Most Popular</div>
+    </div>
+
+    <!-- 8. Horse Ride -->
+    <div class="service-card reveal" style="transition-delay:0.08s">
+      <div class="service-card-bg" style="background-image:url('https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=800&q=80')"></div>
+      <div class="service-card-overlay"></div>
+      <div class="service-card-content">
+        <div class="service-icon"><i class="fas fa-horse"></i></div>
+        <div class="service-tag">Royal Experience</div>
+        <h3 class="service-name">Horse Ride & Processions</h3>
+        <p class="service-desc">Majestic decorated horses for groom arrivals, temple festivals & birthday celebrations — making grand entrances truly unforgettable.</p>
+      </div>
+      <div class="service-badge">Premium</div>
+    </div>
+
+    <!-- 9. Chendamelam -->
+    <div class="service-card reveal" style="transition-delay:0.16s">
+      <div class="service-card-bg" style="background-image:url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80')"></div>
+      <div class="service-card-overlay"></div>
+      <div class="service-card-content">
+        <div class="service-icon"><i class="fas fa-drum"></i></div>
+        <div class="service-tag">Cultural Performance</div>
+        <h3 class="service-name">Chendamelam & Drum Setup</h3>
+        <p class="service-desc">Authentic Chendamelam, Parai & Nadaswaram ensembles — soul-stirring Tamil percussion performances that sanctify every occasion.</p>
+      </div>
+    </div>
+
+    <!-- 10. Traditional Welcome -->
+    <div class="service-card reveal" style="transition-delay:0.0s">
+      <div class="service-card-bg" style="background-image:url('https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80')"></div>
+      <div class="service-card-overlay"></div>
+      <div class="service-card-content">
+        <div class="service-icon"><i class="fas fa-hands-praying"></i></div>
+        <div class="service-tag">Sacred</div>
+        <h3 class="service-name">Traditional Welcome Setup</h3>
+        <p class="service-desc">Kolam art, flower pots, brass lamps & coconut leaf décor — an authentic Tamil welcome ceremony that sets the perfect tone for any event.</p>
+      </div>
+    </div>
+
+    <!-- 11. Temple & Corporate -->
+    <div class="service-card reveal" style="transition-delay:0.08s">
+      <div class="service-card-bg" style="background-image:url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80')"></div>
+      <div class="service-card-overlay"></div>
+      <div class="service-card-content">
+        <div class="service-icon"><i class="fas fa-building"></i></div>
+        <div class="service-tag">Corporate & Sacred</div>
+        <h3 class="service-name">Temple & Corporate Events</h3>
+        <p class="service-desc">Professional management for temple festivals, corporate launches & community functions — handled with precision across Tamil Nadu.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom Banner -->
+  <div style="max-width:1300px; margin:40px auto 0; background:linear-gradient(135deg,rgba(201,168,76,0.1),rgba(107,15,26,0.45)); border:1px solid rgba(201,168,76,0.3); padding:36px 40px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:24px;" class="reveal">
+    <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+      <span style="font-size:2rem;">🌿</span><span style="font-size:2rem;">🍦</span><span style="font-size:2rem;">🍿</span><span style="font-size:2rem;">🍭</span><span style="font-size:2rem;">🥤</span><span style="font-size:2rem;">🍎</span>
+      <div>
+        <div style="font-family:'Cinzel Decorative',serif; font-size:1rem; color:var(--gold-light); margin-bottom:6px;">& Many More Custom Arrangements!</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:1rem; color:rgba(245,230,192,0.75); font-style:italic;">All services available · Custom combos on request</div>
+      </div>
+    </div>
+    <a href="#contact" style="background:linear-gradient(135deg,var(--gold),var(--gold-light)); color:var(--maroon-deep); padding:14px 32px; text-decoration:none; font-family:'Josefin Sans',sans-serif; font-size:0.65rem; letter-spacing:3px; font-weight:700; text-transform:uppercase; white-space:nowrap; display:inline-block; transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform=''">Enquire Now</a>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="section-header reveal">
+    <span class="section-tag">Our Portfolio</span>
+    <h2 class="section-title">Moments We've Created</h2>
+    <p class="section-desc">A glimpse into the magic we craft for every celebration</p>
+    <div class="gold-line"></div>
+  </div>
+
+  <div class="gallery-grid" style="max-width:1300px; margin:0 auto;">
+    <div class="gallery-item" data-img="images/paan-close-up.jpg">
+      <div class="gallery-placeholder" style="background-image:url('images/paan-close-up.jpg'); background-size:cover; background-position:center;"><div></div></div>
+      <div class="gallery-overlay"><div class="gallery-zoom"><i class="fas fa-expand-alt"></i></div></div>
+    </div>
+    <div class="gallery-item" data-img="images/stall-setup.jpg">
+      <div class="gallery-placeholder" style="background-image:url('images/stall-setup.jpg'); background-size:cover; background-position:center;"><div></div></div>
+      <div class="gallery-overlay"><div class="gallery-zoom"><i class="fas fa-expand-alt"></i></div></div>
+    </div>
+    <div class="gallery-item" data-img="images/fruit-preparation.jpg">
+      <div class="gallery-placeholder" style="background-image:url('images/fruit-preparation.jpg'); background-size:cover; background-position:center;"><div></div></div>
+      <div class="gallery-overlay"><div class="gallery-zoom"><i class="fas fa-expand-alt"></i></div></div>
+    </div>
+    <div class="gallery-item" data-img="images/paan-serving.jpg">
+      <div class="gallery-placeholder" style="background-image:url('images/paan-serving.jpg'); background-size:cover; background-position:center;"><div></div></div>
+      <div class="gallery-overlay"><div class="gallery-zoom"><i class="fas fa-expand-alt"></i></div></div>
+    </div>
+    <div class="gallery-item" data-img="images/pineapple-centerpiece.jpg">
+      <div class="gallery-placeholder" style="background-image:url('images/pineapple-centerpiece.jpg'); background-size:cover; background-position:center;"><div></div></div>
+      <div class="gallery-overlay"><div class="gallery-zoom"><i class="fas fa-expand-alt"></i></div></div>
+    </div>
+    <div class="gallery-item" data-img="images/night-event-view.jpg">
+      <div class="gallery-placeholder" style="background-image:url('images/night-event-view.jpg'); background-size:cover; background-position:center;"><div></div></div>
+      <div class="gallery-overlay"><div class="gallery-zoom"><i class="fas fa-expand-alt"></i></div></div>
+    </div>
+  </div>
+</section>
+<!-- ── WHY CHOOSE US ───────────────────────────────── -->
+<section id="why">
+  <div class="section-header reveal">
+    <span class="section-tag">Our Promise</span>
+    <h2 class="section-title light">Why Families Trust Us</h2>
+    <p class="section-desc light">Two decades of excellence. One promise — your celebration, perfected.</p>
+    <div class="gold-line"></div>
+  </div>
+
+  <div class="why-grid">
+    <div class="why-card reveal">
+      <div class="why-icon-ring"><i class="fas fa-award"></i></div>
+      <h3 class="why-title">25+ Years of Excellence</h3>
+      <p class="why-desc">Trusted by thousands of Tamil families for over 18 years. Our legacy speaks through every event we've had the honour to serve.</p>
+    </div>
+    <div class="why-card reveal" style="transition-delay:0.1s">
+      <div class="why-icon-ring"><i class="fas fa-leaf"></i></div>
+      <h3 class="why-title">Authentic Tamil Heritage</h3>
+      <p class="why-desc">Every detail reflects the cultural richness of Tamil Nadu — from traditional welcome setups to authentic folk performances.</p>
+    </div>
+    <div class="why-card reveal" style="transition-delay:0.2s">
+      <div class="why-icon-ring"><i class="fas fa-shield-alt"></i></div>
+      <h3 class="why-title">Hygienic & Safe</h3>
+      <p class="why-desc">All food counters — Beeda, Ice Cream, Fruit Stalls — maintained with the highest hygiene standards and fresh quality ingredients.</p>
+    </div>
+    <div class="why-card reveal" style="transition-delay:0.05s">
+      <div class="why-icon-ring"><i class="fas fa-clock"></i></div>
+      <h3 class="why-title">Punctual & Professional</h3>
+      <p class="why-desc">Our trained teams arrive ahead of schedule. We understand that in events, timing is everything — we never compromise on it.</p>
+    </div>
+    <div class="why-card reveal" style="transition-delay:0.15s">
+      <div class="why-icon-ring"><i class="fas fa-rupee-sign"></i></div>
+      <h3 class="why-title">Transparent Pricing</h3>
+      <p class="why-desc">No hidden costs. No surprises. We provide clear, upfront quotations tailored to your guest count and requirements.</p>
+    </div>
+    <div class="why-card reveal" style="transition-delay:0.25s">
+      <div class="why-icon-ring"><i class="fas fa-map-marker-alt"></i></div>
+      <h3 class="why-title">Pan-Tamil Nadu Service</h3>
+      <p class="why-desc">We serve weddings, receptions and functions across 12+ districts — from Chennai to Coimbatore, Madurai to Tirunelveli.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRICING ────────────────────────────────────── -->
+<section id="pricing">
+  <div class="section-header reveal">
+    <span class="section-tag">Investment</span>
+    <h2 class="section-title">Transparent Pricing</h2>
+    <p class="section-desc">Select your guest count and discover the perfect package for your celebration</p>
+    <div class="gold-line"></div>
+  </div>
+
+  <div class="guest-selector reveal">
+    <span class="guest-label">Adjust Guest Count to See Pricing</span>
+    <div class="guest-count-display" id="guestDisplay">250 <span>Guests</span></div>
+    <input type="range" id="guestSlider" min="50" max="1000" step="50" value="250">
+    <div class="range-labels"><span>50</span><span>250</span><span>500</span><span>750</span><span>1000+</span></div>
+  </div>
+
+  <div class="pricing-cards reveal">
+    <div class="price-card">
+      <div class="price-tier">Essential</div>
+      <div class="price-name">Silver Celebration</div>
+      <div class="price-amount" id="price1">₹28,000</div>
+      <div class="price-per">starting price</div>
+      <ul class="price-features">
+        <li><i class="fas fa-check"></i> Beeda Counter (Basic)</li>
+        <li><i class="fas fa-check"></i> Ice Cream</li>
+        <li><i class="fas fa-check"></i> Fruit Stall</li>
+        <li><i class="fas fa-times" style="color:#ccc"></i> Horse Ride</li>
+        <li><i class="fas fa-times" style="color:#ccc"></i> Chendamelam</li>
+        <li><i class="fas fa-check"></i> Basic Welcome Setup</li>
+       
+      </ul>
+      <button class="btn-price" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Enquire Now</button>
+    </div>
+
+    <div class="price-card featured">
+      <div class="price-badge">Most Chosen</div>
+      <div class="price-tier" style="color:var(--gold-light)">Premium</div>
+      <div class="price-name">Gold Wedding Package</div>
+      <div class="price-amount" id="price2">₹48,000</div>
+      <div class="price-per">all-inclusive</div>
+      <ul class="price-features">
+        <li><i class="fas fa-check"></i> Premium Beeda Counter</li>
+        <li><i class="fas fa-check"></i> Ice Cream</li>
+        <li><i class="fas fa-check"></i> Grand Fruit Stall</li>
+        <li><i class="fas fa-check"></i> Horse Ride (2 hrs)</li>
+        <li><i class="fas fa-check"></i> Drum Setup</li>
+        <li><i class="fas fa-check"></i> Royal Welcome Setup</li>
+       
+      </ul>
+      <button class="btn-price" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book This Package</button>
+    </div>
+
+    <div class="price-card">
+      <div class="price-tier">Luxury</div>
+      <div class="price-name">Platinum Grand Event</div>
+      <div class="price-amount" id="price3">₹65,000</div>
+      <div class="price-per">full-day event</div>
+      <ul class="price-features">
+        <li><i class="fas fa-check"></i> Royal Beeda Counter</li>
+        <li><i class="fas fa-check"></i> Ice Cream</li>
+        <li><i class="fas fa-check"></i> Premium Fruit Stall</li>
+        <li><i class="fas fa-check"></i> Horse Procession</li>
+        <li><i class="fas fa-check"></i> Full Chendamelam Team</li>
+        <li><i class="fas fa-check"></i> Heritage Welcome Arch</li>
+       
+      </ul>
+      <button class="btn-price" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Enquire Now</button>
+    </div>
+  </div>
+  <p style="text-align:center; margin-top:32px; font-size:0.75rem; color:#888; font-style:italic;">* Prices are indicative and subject to customization based on location, duration and specific requirements.</p>
+</section>
+
+<!-- ── TESTIMONIALS ───────────────────────────────── -->
+<section id="testimonials">
+  <div class="section-header reveal">
+    <span class="section-tag">Client Stories</span>
+    <h2 class="section-title light">What Families Say</h2>
+    <div class="gold-line"></div>
+  </div>
+
+  <div class="testimonials-slider">
+    <div class="testimonial-track" id="testiTrack">
+      <div class="testimonial-slide">
+        <div class="testi-stars">★ ★ ★ ★ ★</div>
+        <p class="testi-quote">"The Beeda counter was an absolute showstopper at my daughter's wedding! Every guest was amazed by the variety and freshness. Murugan Events made our Tamil wedding truly royal."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">R</div>
+          <div class="testi-name">Krishna</div>
+          <div class="testi-event">Daughter's Wedding </div>
+        </div>
+      </div>
+      <div class="testimonial-slide">
+        <div class="testi-stars">★ ★ ★ ★ ★</div>
+        <p class="testi-quote">"We booked the Gold package for our son's reception. The horse procession, the ice cream counter , and the Chendamelam team — everything was perfectly orchestrated. Highly recommended!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar">V</div>
+          <div class="testi-name">karthika kumar</div>
+          <div class="testi-event">Son's Reception </div>
+        </div>
+      </div>
+      <div class="testimonial-slide">
+        <div class="testi-stars">★ ★ ★ ★ ★</div>
+        <p class="testi-quote">"My daughter's birthday party was transformed into a magical celebration with their fruit stall and ice cream counter. The children were thrilled, the parents were impressed. Murugan Events is exceptional!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar">P</div>
+          <div class="testi-name">Priyanka Natarajan</div>
+          <div class="testi-event">Birthday Celebration</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="testi-nav" id="testiNav">
+    <div class="testi-dot active" data-t="0"></div>
+    <div class="testi-dot" data-t="1"></div>
+    <div class="testi-dot" data-t="2"></div>
+    <div class="testi-dot" data-t="3"></div>
+  </div>
+</section>
+
+<!-- ── CONTACT ────────────────────────────────────── -->
+<section id="contact" style="background:var(--cream); padding:100px 40px; position:relative;">
+  <div class="section-header reveal" style="margin-bottom:60px;">
+    <span class="section-tag">Get In Touch</span>
+    <h2 class="section-title">Contact Us to Book</h2>
+    <p class="section-desc">Reach out directly — we're always ready to make your celebration unforgettable</p>
+    <div class="gold-line"></div>
+  </div>
+
+  <div style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:36px;" class="contact-cards-grid">
+
+    <!-- Card: Lakshmana Pandian -->
+    <div class="contact-person-card reveal-left">
+      <div class="cpc-top">
+        <div class="cpc-avatar">LP</div>
+        <div>
+
+          <div class="cpc-name">Lakshmana Pandian</div>
+        </div>
+      </div>
+      <div class="cpc-divider"></div>
+      <div class="cpc-row">
+        <div class="cpc-icon"><i class="fas fa-phone-alt"></i></div>
+        <div>
+          <div class="cpc-label">Phone</div>
+          <a href="tel:+919787676868" class="cpc-value">+91 97876 76868</a>
+        </div>
+      </div>
+      <div class="cpc-row">
+        <div class="cpc-icon" style="background:rgba(37,211,102,0.12); color:#1ebe5d; border-color:rgba(37,211,102,0.3);"><i class="fab fa-whatsapp"></i></div>
+        <div>
+          <div class="cpc-label">WhatsApp</div>
+          <a href="https://wa.me/919942786775?text=Hello%2C%20I%20want%20to%20book%20your%20event%20services." target="_blank" class="cpc-value">+91 99427 86775</a>
+        </div>
+      </div>
+      <a href="tel:+919787676868" class="cpc-btn">
+        <i class="fas fa-phone-alt"></i> Call Now
+      </a>
+    </div>
+
+    <!-- Card: Lingesh Pandian -->
+    <div class="contact-person-card reveal-right">
+      <div class="cpc-top">
+        <div class="cpc-avatar" style="background:linear-gradient(135deg,var(--maroon-mid),var(--gold));">LG</div>
+        <div>
+         
+          <div class="cpc-name">Lingesh Pandian</div>
+        </div>
+      </div>
+      <div class="cpc-divider"></div>
+      <div class="cpc-row">
+        <div class="cpc-icon"><i class="fas fa-phone-alt"></i></div>
+        <div>
+          <div class="cpc-label">Phone</div>
+          <a href="tel:+917806943946" class="cpc-value">+91 78069 43946</a>
+        </div>
+      </div>
+      
+      <div class="cpc-row">
+        <div class="cpc-icon" style="background:rgba(37,211,102,0.12); color:#1ebe5d; border-color:rgba(37,211,102,0.3);"><i class="fab fa-whatsapp"></i></div>
+        <div>
+          <div class="cpc-label">WhatsApp</div>
+          <a href="https://wa.me/917806943946?text=Hello%2C%20I%20want%20to%20book%20your%20event%20services." target="_blank" class="cpc-value">+91 78069 43946</a>
+        </div>
+      </div>
+      <a href="https://wa.me/917806943946?text=Hello%2C%20I%20want%20to%20book%20your%20event%20services." target="_blank" class="cpc-btn" style="background:linear-gradient(135deg,#25D366,#1ebe5d); color:#fff;">
+        <i class="fab fa-whatsapp"></i> WhatsApp Us
+      </a>
+    </div>
+
+    <!-- Address Card -->
+    <div class="contact-person-card reveal" style="grid-column: span 1;">
+      <div class="cpc-row" style="margin-bottom:0;">
+        <div class="cpc-icon"><i class="fas fa-store"></i></div>
+        <div>
+          <div class="cpc-label">Business Name</div>
+          <div class="cpc-value" style="color:var(--maroon); font-weight:700;">Murugan Beeda Stall</div>
+        </div>
+      </div>
+      <div class="cpc-divider"></div>
+      <div class="cpc-row">
+        <div class="cpc-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div>
+          <div class="cpc-label">Address</div>
+          <div class="cpc-value" style="color:var(--dark); line-height:1.6;">AKMG Lodge Opposite,<br>Oddanchatram, Dindigul,<br>Tamil Nadu</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Instagram Card -->
+    <div class="contact-person-card reveal" style="grid-column: span 1; background:linear-gradient(135deg,var(--maroon-deep),var(--maroon)); border-color:rgba(201,168,76,0.35);">
+      <div style="text-align:center; padding:10px 0;">
+        <div style="font-size:3rem; margin-bottom:12px;">
+          <i class="fab fa-instagram" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); -webkit-background-clip:text; -webkit-text-fill-color:transparent;"></i>
+        </div>
+        <div style="font-family:'Cinzel Decorative',serif; font-size:0.85rem; color:var(--gold-light); margin-bottom:6px;">Follow Us on Instagram</div>
+        <div style="font-size:0.75rem; color:rgba(245,230,192,0.6); letter-spacing:2px; margin-bottom:24px;">@beeda5656</div>
+        <a href="https://www.instagram.com/beeda5656?igsh=a214OGN0dm55cG1o" target="_blank" rel="noopener noreferrer"
+          style="display:inline-flex; align-items:center; gap:10px; padding:14px 30px;
+                 background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
+                 color:#fff; text-decoration:none; border-radius:2px;
+                 font-family:'Josefin Sans',sans-serif; font-size:0.65rem;
+                 letter-spacing:3px; font-weight:700; text-transform:uppercase;
+                 transition:transform 0.3s, box-shadow 0.3s;
+                 box-shadow:0 6px 20px rgba(131,58,180,0.35);"
+          onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 12px 30px rgba(131,58,180,0.5)'"
+          onmouseout="this.style.transform='';this.style.boxShadow='0 6px 20px rgba(131,58,180,0.35)'">
+          <i class="fab fa-instagram"></i> Visit Profile
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .contact-cards-grid { }
+  @media(max-width:700px) {
+    .contact-cards-grid { grid-template-columns:1fr !important; }
+    .contact-person-card[style*="span 1"] { grid-column: span 1 !important; }
+  }
+  .contact-person-card {
+    background: #fff;
+    border: 1px solid rgba(201,168,76,0.25);
+    padding: 32px 28px;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .contact-person-card::before {
+    content:'';
+    position:absolute; top:0; left:0; right:0; height:3px;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  }
+  .contact-person-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(107,15,26,0.12);
+  }
+  .cpc-top {
+    display:flex; align-items:center; gap:18px; margin-bottom:20px;
+  }
+  .cpc-avatar {
+    width:58px; height:58px; border-radius:50%; flex-shrink:0;
+    background:linear-gradient(135deg,var(--maroon-deep),var(--gold));
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Cinzel Decorative',serif; font-size:1.1rem; color:#fff;
+    border:2px solid rgba(201,168,76,0.4);
+  }
+  .cpc-role {
+    font-size:0.55rem; letter-spacing:3px; color:var(--gold);
+    text-transform:uppercase; margin-bottom:5px;
+  }
+  .cpc-name {
+    font-family:'Cinzel Decorative',serif;
+    font-size:1rem; color:var(--maroon-deep); line-height:1.3;
+  }
+  .cpc-divider {
+    height:1px; background:linear-gradient(90deg,transparent,rgba(201,168,76,0.4),transparent);
+    margin:20px 0;
+  }
+  .cpc-row {
+    display:flex; align-items:center; gap:14px; margin-bottom:18px;
+  }
+  .cpc-icon {
+    width:38px; height:38px; flex-shrink:0;
+    background:rgba(107,15,26,0.07);
+    border:1px solid rgba(107,15,26,0.12);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--maroon); font-size:0.85rem;
+  }
+  .cpc-label {
+    font-size:0.55rem; letter-spacing:2px; color:#aaa;
+    text-transform:uppercase; margin-bottom:3px;
+  }
+  .cpc-value {
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.05rem; color:var(--maroon-deep);
+    text-decoration:none; font-weight:600;
+    transition:color 0.2s;
+  }
+  .cpc-value:hover { color:var(--gold); }
+  .cpc-btn {
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    width:100%; padding:14px;
+    background:linear-gradient(135deg,var(--maroon-deep),var(--maroon));
+    color:var(--gold-light); text-decoration:none;
+    font-family:'Josefin Sans',sans-serif; font-size:0.65rem;
+    letter-spacing:3px; font-weight:700; text-transform:uppercase;
+    margin-top:8px; transition:opacity 0.3s, transform 0.3s;
+    border:none; cursor:pointer;
+  }
+  .cpc-btn:hover { opacity:0.88; transform:translateY(-2px); }
+</style>
+
+<!-- ── FOOTER ─────────────────────────────────────── -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <a href="#hero" class="footer-logo">Sri Mahalakshmi Events</a>
+      <span class="footer-logo-sub">Premium Tamil Event Catering</span>
+      <p class="footer-about">Crafting unforgettable Tamil celebrations since 2000. We bring culture, elegance and joy to every wedding, reception and special occasion.</p>
+      <div class="footer-social" style="margin-top:24px;">
+        
+        <a href="https://www.instagram.com/beeda5656?igsh=a214OGN0dm55cG1o" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+        
+        <a href="https://wa.me/917806943946?text=Hello%2C%20I%20want%20to%20book%20your%20event%20services." target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Our Services</div>
+      <ul class="footer-links">
+        <li><a href="#services">Beeda Counter</a></li>
+        <li><a href="#services">Ice Cream Counter</a></li>
+        <li><a href="#services">Popcorn Counter</a></li>
+        <li><a href="#services">Cotton Candy Stall</a></li>
+        <li><a href="#services">Fresh Juice Counter</a></li>
+        <li><a href="#services">Fresh Fruit Stall</a></li>
+        <li><a href="#services">Horse Ride</a></li>
+        <li><a href="#services">Chendamelam & Drums</a></li>
+        <li><a href="#services">Traditional Welcome</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Event Types</div>
+      <ul class="footer-links">
+        <li><a href="#contact">Weddings</a></li>
+        <li><a href="#contact">Receptions</a></li>
+        <li><a href="#contact">Birthday Parties</a></li>
+        <li><a href="#contact">Temple Functions</a></li>
+        <li><a href="#contact">Corporate Events</a></li>
+        <li><a href="#contact">Engagements</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Quick Book</div>
+      <p style="font-size:0.85rem; color:rgba(255,255,255,0.4); margin-bottom:20px; line-height:1.6;">
+        Ready to make your event extraordinary? Contact us today for a free consultation.
+      </p>
+      <a href="#contact" class="btn-primary" style="display:block; text-align:center; font-size:0.65rem;">Book Now</a>
+      <p style="font-size:0.75rem; color:rgba(201,168,76,0.5); margin-top:16px; text-align:center;">
+        📍 Oddanchatram, Dindigul, Tamil Nadu
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 Murugan Events. All rights reserved.</span>
+    <span class="footer-tagline">Made with ❤️ for Tamil Celebrations</span>
+  </div>
+</footer>
+
+<!-- ── WHATSAPP FLOAT ──────────────────────────────── -->
+<div class="wa-float">
+  <span class="wa-tooltip">Book on WhatsApp</span>
+  <a href="https://wa.me/917806943946?text=Hello%2C%20I%27m%20interested%20in%20booking%20your%20event%20services." class="wa-btn" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+
+<!-- ── SUCCESS TOAST ──────────────────────────────── -->
+<div id="toast" style="
+  position:fixed; bottom:100px; right:30px; z-index:9999;
+  background:linear-gradient(135deg,var(--maroon-deep),var(--maroon));
+  border:1px solid rgba(201,168,76,0.4);
+  color:var(--gold-light); padding:18px 28px;
+  font-size:0.75rem; letter-spacing:2px;
+  transform:translateX(200%); transition:transform 0.5s ease;
+  max-width:280px; border-radius:2px;
+  box-shadow:0 10px 40px rgba(0,0,0,0.3);
+">
+  <div style="color:var(--gold); margin-bottom:6px; font-family:'Cinzel Decorative',serif; font-size:0.7rem;">✓ Request Received</div>
+  Our team will contact you within 2 hours. Thank you for choosing Sri Mahalakshmi Events!
+</div>
+
+<script>
+  // ── NAV SCROLL ────────────────────────────────────
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // ── HERO SLIDER ───────────────────────────────────
+  const slides = document.querySelectorAll('.hero-slide');
+  const indicators = document.querySelectorAll('.indicator');
+  let current = 0;
+  let slideTimer;
+
+  function goToSlide(i) {
+    slides[current].classList.remove('active');
+    indicators[current].classList.remove('active');
+    current = i;
+    slides[current].classList.add('active');
+    indicators[current].classList.add('active');
+  }
+
+  function nextSlide() {
+    goToSlide((current + 1) % slides.length);
+  }
+
+  function startSlider() {
+    slideTimer = setInterval(nextSlide, 5000);
+  }
+
+  indicators.forEach(ind => {
+    ind.addEventListener('click', () => {
+      clearInterval(slideTimer);
+      goToSlide(parseInt(ind.dataset.index));
+      startSlider();
+    });
+  });
+
+  startSlider();
+
+  // ── SCROLL REVEAL ─────────────────────────────────
+  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  // ── MOBILE NAV ────────────────────────────────────
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileOverlay = document.getElementById('mobileOverlay');
+
+  function openMenu() {
+    mobileMenu.classList.add('open');
+    mobileOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    mobileMenu.classList.remove('open');
+    mobileOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  hamburger.addEventListener('click', openMenu);
+  document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', closeMenu));
+
+  // ── GALLERY LIGHTBOX ──────────────────────────────
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxClose = document.getElementById('lightboxClose');
+
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('click', () => {
+      lightboxImg.src = item.dataset.img;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  lightboxClose.addEventListener('click', () => {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // ── PRICING SLIDER ────────────────────────────────
+  const slider = document.getElementById('guestSlider');
+  const guestDisplay = document.getElementById('guestDisplay');
+  const p1 = document.getElementById('price1');
+  const p2 = document.getElementById('price2');
+  const p3 = document.getElementById('price3');
+
+  function updatePricing(guests) {
+    guestDisplay.innerHTML = `${guests} <span>Guests</span>`;
+    const base = guests / 250;
+    const s1 = Math.round(18000 * base / 1000) * 1000;
+    const s2 = Math.round(38000 * base / 1000) * 1000;
+    const s3 = Math.round(65000 * base / 1000) * 1000;
+    p1.textContent = `₹${s1.toLocaleString('en-IN')}`;
+    p2.textContent = `₹${s2.toLocaleString('en-IN')}`;
+    p3.textContent = `₹${s3.toLocaleString('en-IN')}`;
+  }
+
+  slider.addEventListener('input', () => updatePricing(parseInt(slider.value)));
+
+  // ── TESTIMONIALS SLIDER ───────────────────────────
+  const track = document.getElementById('testiTrack');
+  const dots = document.querySelectorAll('.testi-dot');
+  let testiCurrent = 0;
+  let testiTimer;
+
+  function goTesti(i) {
+    track.style.transform = `translateX(-${i * 100}%)`;
+    dots[testiCurrent].classList.remove('active');
+    testiCurrent = i;
+    dots[testiCurrent].classList.add('active');
+  }
+
+  function nextTesti() {
+    goTesti((testiCurrent + 1) % 4);
+  }
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      clearInterval(testiTimer);
+      goTesti(parseInt(dot.dataset.t));
+      testiTimer = setInterval(nextTesti, 5000);
+    });
+  });
+
+  testiTimer = setInterval(nextTesti, 5000);
+
+  // ── FORM SUBMIT ───────────────────────────────────
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target;
+    const txt = document.getElementById('submitText');
+    txt.textContent = 'Sending...';
+    btn.disabled = true;
+
+    setTimeout(() => {
+      txt.textContent = 'Send Booking Request';
+      btn.disabled = false;
+      const toast = document.getElementById('toast');
+      toast.style.transform = 'translateX(0)';
+      setTimeout(() => { toast.style.transform = 'translateX(200%)'; }, 4000);
+    }, 1800);
+  }
+
+  // ── ACTIVE NAV HIGHLIGHT ON SCROLL ────────────────
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  window.addEventListener('scroll', () => {
+    let scrollPos = window.scrollY + 120;
+    sections.forEach(sec => {
+      if (scrollPos >= sec.offsetTop && scrollPos < sec.offsetTop + sec.offsetHeight) {
+        navLinks.forEach(a => a.style.color = '');
+        const active = document.querySelector(`.nav-links a[href="#${sec.id}"]`);
+        if (active) active.style.color = 'var(--gold)';
+      }
+    });
+  });
+</script>
+</body>
+</html>
